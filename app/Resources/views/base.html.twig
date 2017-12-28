@@ -2,7 +2,10 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% if header is defined %}
+                {{ header }}
+            {% endif %}</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
