@@ -2,14 +2,22 @@ app:
     resource: '@AppBundle/Controller/'
     type: annotation
 
+start_page:
+    path:     /
+    defaults: { _controller: AppBundle:Product:index }
+
 product_list:
     path:     /products
     defaults: { _controller: AppBundle:Product:index }
 
-blog_list:
-    path:     /blog
-    defaults: { _controller: AppBundle:Blog:index }
+manufacturing_resource_list:
+    path:     /manufacturing_stock
+    defaults: { _controller: AppBundle:ManufacturingStock:index }
 
-blog_show:
-    path:     /blog/{slug}
-    defaults: { _controller: AppBundle:Blog:show }
+manufacturing_resource_change:
+    path:     /manufacturing_resource_change/{id}
+    defaults: { _controller: AppBundle:ManufacturingStock:resourceChange }
+
+flush_db:
+    path:     /flush_db
+    defaults: { _controller: AppBundle:Debug:flushDb }
